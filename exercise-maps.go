@@ -1,21 +1,22 @@
 ﻿package main
 
 import (
-	"golang.org/x/tour/wc"
 	"strings"
+
+	"golang.org/x/tour/wc"
 )
 
 func WordCount(s string) map[string]int {
 	var want = make(map[string]int)
 
-	var words []string = strings.Fields(s) //単語ごとに分解
+	var words []string = strings.Fields(s)
 
 	for _, word := range words {
-		_, isExist := want[word] //単語に対する要素が存在するか
+		_, isExist := want[word]
 		if !isExist {
-			want[word] = 1 //存在しない場合 → wordの数を1に初期化
+			want[word] = 1
 		} else {
-			want[word]++ //存在する場合 → wordの数を+1
+			want[word]++
 		}
 	}
 	return want
