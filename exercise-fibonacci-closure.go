@@ -6,9 +6,8 @@ import "fmt"
 // a function that returns an int.
 func fibonacci() func() int {
 	count := 0
-	Sn_1 := 1
-	Sn_2 := 0
-	Sn := 0
+	var Sn_1, Sn_2, Sn int = 1, 0, 0
+
 	return func() int {
 		if count == 0 {
 			count++
